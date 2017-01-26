@@ -25,8 +25,9 @@ var Click2Eliza = (function(){
 	};
 
 	var _openElizaDialog = function(){
-		$( "#chat-dialog" ).dialog( "open" );
-	};
+		$("#chat-dialog" ).dialog( "open" );
+        $("#chat-text")[0].value = '';
+    };
 
 	var initialiseChatDialog = function(){
 
@@ -41,9 +42,9 @@ var Click2Eliza = (function(){
 				height: 320
 			});
 
-			var chatText = $('#chat-text');
+			var chatTextBox = $('#chat-text');
 
-            chatText.keypress(function (e) {
+            chatTextBox.keypress(function (e) {
   				if (e.which == 13) {
     				$('#chat-form').submit();
     				return false;
@@ -51,9 +52,9 @@ var Click2Eliza = (function(){
 			});
 
 			$("#chat-form").submit(function(event){
-				var chatText = chatText[0].value;
+				var chatText = chatTextBox[0].value;
 				_elizaResponse(chatText);
-                chatText[0].value = '';
+                chatTextBox[0].value = '';
   				event.preventDefault();
 			});
 
