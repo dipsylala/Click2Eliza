@@ -1,0 +1,29 @@
+{
+"name":"Click2Eliza",
+"description":"A chrome extension for the Veracode platform to add functionality to chat to someone who genuinely exists.",
+"version":"0.0.1",
+"manifest_version":2,
+"content_scripts": [
+    {
+    "all_frames": false,
+      "css": [ "css/jquery-ui.min.css" ],
+      "matches": ["http://analysiscenter.veracode.com/*","https://analysiscenter.veracode.com/*"],
+      //"matches": [ "https://www.google.co.uk/*" ],
+      "js": [ "js/jquery-3.1.1.min.js","js/jquery-ui.min.js", "js/elizabot.js", "js/elizadata.js",  "js/click2eliza.js" ]
+    }
+  ],
+  "web_accessible_resources": [ "html/chat.html", "images/ui-icons_444444_256x240.png", "images/ui-icons_555555_256x240.png", "images/ui-icons_777777_256x240.png", "images/ui-icons_ffffff_256x240.png" ],
+  "permissions": [ "storage" ],
+  "icons": { 
+    "16": "images/eliza16.png",
+    "48": "images/eliza48.png",
+    "128": "images/eliza128.png" 
+  },
+  "browser_action": {
+    "default_icon": {                    
+      "19": "images/eliza48.png",          
+      "38": "images/eliza48.png"          
+    }
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+}
