@@ -26,6 +26,7 @@ var Click2Eliza = (function(){
 
 	var _openElizaDialog = function(){
 		$("#chat-dialog" ).dialog( "open" );
+        $("#chat-response")[0].innerHTML = '';
         $("#chat-text")[0].value = '';
     };
 
